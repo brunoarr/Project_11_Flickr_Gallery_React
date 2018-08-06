@@ -1,9 +1,9 @@
 import React  from 'react';
-import Header from './Header';
 import Gallery from './Gallery';
 
 const Container = props => {
 
+  //loop though each image and display
   const results = props.data;
   let pictures = results.map(picture =>
     <Gallery key={picture.id} url={`https://farm${picture.farm}.staticflickr.com/${picture.server}/${picture.id}_${picture.secret}.jpg`}/>

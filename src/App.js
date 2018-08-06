@@ -15,10 +15,13 @@ class App extends Component {
     };
   }
 
+  //default cats when loading
   componentDidMount() {
     this.performSearch('cats');
   }
 
+
+  //function to perform the search for a given query
   performSearch = (query) => {
     if (query !== this.state.term) {
       axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
